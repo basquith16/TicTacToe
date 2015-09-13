@@ -1,14 +1,74 @@
 body {
   background-image: url("http://wyeagricolaclub.org.uk/images/galleries/5/desktop-background-space-hd-background-wallpaper-48.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%}
+  background-size: 100% 100%;
+}
+
+.draggable {
+  background-image: url("http://i.imgur.com/TOd0zZk.png");
+  height: auto;
+  width: auto;
+  margin: 20px 0 0 20px;
+  background-size: 1px 1px;
+}
+
+#X {
+  height: 90px;
+  width: 90px;
+  margin: 0 10px 0 0;
+}
+
+#O {
+  background-image: url("http://i.imgur.com/ZB6Nxl6.png");
+  height: 120;
+  width: 100px;
+  margin: -35px 0 0 -25px;
+  opacity: 1;
+}
+
+#rocket1 {
+  background-image: url("http://i.imgur.com/yLVMREV.gif?1");
+  opacity: .3;
+  margin: -50px 0 0 155px;
+  background-size: 25px 50px;
+  image-orientation: 180deg flip;
+}
+
+#rocket2 {
+  background-image: url("http://i.imgur.com/yLVMREV.gif?1");
+  opacity: .3;
+  margin: -150px 0 0 185px;
+  background-size: 25px 50px;
+}
+
+#rocket3 {
+  background-image: url("http://i.imgur.com/yLVMREV.gif?1");
+  opacity: .2;
+  background-size: 25px 50px;
+  margin: -210px  0 0 225px;
+}
+
+#orocket {
+  background-image: url("http://i.imgur.com/q81Vr1b.gif?1");
+  opacity: 1;
+  background-size: 70px 35px;
+  margin: 45px 155px 0 25px;
+}
+
+h1 {
+  color: white;
+  font-family: Myriad Pro;
+  font-size: 48px;
+  text-shadow: 5px 5px purple;
+  margin-left: -150px;
+}
 
 header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  padding-bottom: 150px;
+  padding-bottom: 75px;
 }
 
 section {
@@ -23,6 +83,7 @@ section {
   justify-content: center;
   padding: 0;
   margin: 25px;
+  text-align: center;
 }
 
 .row1 {
@@ -40,18 +101,22 @@ section {
 .column1 {
   margin-top: -48px;
   margin-left: -63px;
+  text-align: center;
 }
 
 .column2 {
   margin-top: -30px;
   margin-left: -65px;
+  text-align: center;
 }
 
 .column3 {
   margin-top: -11px;
   margin-left: -60px;
+  text-align: center;
 }
-  div {
+
+div{
   width: 200px;
   height: 200px;
   background-image: url("http://i.imgur.com/MQgjza4.png");
@@ -59,5 +124,89 @@ section {
   background-size: contain;
   padding: 0;
   margin: -10px;
+}
 
+#c1{
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/u3hC7PY.png");
+  opacity: .5;
+  background-size: 50px 50px;
+  margin: 15px 0 0 70px;
+}
+
+#c2  {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/hzsPgPs.png.png");
+  opacity: .5;
+  background-size: 50px 50px;
+  margin: 15px 0 0 75px;
+}
+
+#c3 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/JXDYDbc.png");
+  opacity: .4;
+  background-size: 50px 50px;
+  margin: 15px 0 0 70px;
+}
+
+#c4 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/EI0AIBW.png");
+  opacity: .4;
+  background-size: 50px 50px;
+  margin: 15px 0 0 75px;
+}
+
+
+#c5 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/d2Pb3Of.png");
+  opacity: .4;
+  background-size: 80px 80px;
+  margin: 5px 0 0 65px;
+}
+
+#c6 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/4Qhmru5.png");
+  opacity: .4;
+  background-size: 50px 50px;
+  margin: 20px 0 0 80px;
+}
+
+
+#c7 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/BIATFCZ.png");
+  opacity: .4;
+  background-size: 50px 50px;
+  margin: 20px 0 0 80px;
+}
+
+
+#c8 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/Fx2cfD6.png");
+  opacity: .4;
+  background-size: 50px 50px;
+  margin: 20px 0 0 75px;
+}
+
+
+#c9 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("http://i.imgur.com/ohuUIMP.png");
+  opacity: .4;
+  background-size: 50px 50px;
+  margin: 20px 0 0 75px;
 }
