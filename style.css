@@ -5,8 +5,6 @@ body {
 }
 
 #draggable {
-  background-image: url("http://i.imgur.com/TOd0zZk.png");
-  background-size: 1px 1px;
   width: 150px;
   height: 150px;
   padding: 0;
@@ -15,7 +13,6 @@ body {
 }
 
 #draggable2 {
-  background-size: 1px 1px;
   width: 150px;
   height: 150px;
   padding: 0.5em;
@@ -23,47 +20,65 @@ body {
   z-index: 1;
 }
 
-.X {
+#X {
+  background-image: url("http://i.imgur.com/TOd0zZk.png");
+  background-size: 90px 90px;
   height: 90px;
   width: 90px;
-  margin: 0;
+  margin: 0 0 0 30px;
   padding: 0;
 }
 
-.O {
+#O {
+  background-image: url("http://i.imgur.com/ZB6Nxl6.png");
   height: 120;
   width: 100px;
-  margin: 0;
+  margin: -210px 0 0 25px;
   padding: 0;
+  z-index: 1;
 }
 
 #rocket1 {
   background-image: url("http://i.imgur.com/LeUquib.gif");
   opacity: .8;
-  margin: -50px 0 0 25px;
+  margin: -60px 0 0 30px;
   background-size: 25px 50px;
-  image-orientation: 180deg flip;
+  position: absolute;
+  z-index: -1;
 }
 
 #rocket2 {
   background-image: url("http://i.imgur.com/LeUquib.gif");
   opacity: .8;
-  margin: -170px 0 0 100px;
+  margin: -25px 0 0 100px;
   background-size: 25px 50px;
+  position: absolute;
+  z-index: -1;
 }
 
 #rocket3 {
   background-image: url("http://i.imgur.com/LeUquib.gif");
   opacity: .8;
   background-size: 25px 50px;
-  margin: -190px  0 0 50px;
+  margin: -10px 0 0 55px;
+  position: absolute;
+  z-index: -1;
+}
+
+#rocket4 {
+  background-image: url("http://i.imgur.com/LeUquib.gif");
+  opacity: .8;
+  background-size: 25px 50px;
+  position: absolute;
+  z-index: -1;
+  margin: -50px 0 0 75px;
 }
 
 #orocket {
   background-image: url("http://i.imgur.com/vdkJjqB.gif");
   background-size: 100px 50px;
-  margin: -45px 0 0 25px;
-}
+  margin: 25px 0 0 25px;
+  z-index: -1:}
 
 #h1 {
   background-size: 1px 1px;
@@ -100,6 +115,7 @@ section {
 
 .row1 {
   margin-left: -400px;
+
 }
 
 .row2 {
@@ -114,24 +130,30 @@ section {
   margin-top: -48px;
   margin-left: -63px;
   text-align: center;
+  background-image: url("http://i.imgur.com/MQgjza4.png");
+  z-index: -2;
 }
 
 .column2 {
   margin-top: -30px;
   margin-left: -65px;
   text-align: center;
+  background-image: url("http://i.imgur.com/MQgjza4.png");
+  z-index: -2;
 }
 
 .column3 {
   margin-top: -11px;
   margin-left: -60px;
   text-align: center;
+  background-image: url("http://i.imgur.com/MQgjza4.png");
+  z-index: -2;
 }
 
 div {
   width: 200px;
   height: 200px;
-  background-image: url("http://i.imgur.com/MQgjza4.png");
+  /*background-image: url("http://i.imgur.com/MQgjza4.png");*/
   background-repeat: no-repeat;
   background-size: contain;
   padding: 0;
