@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
-  <link href="style.css" rel="stylesheet"/>
+  <script src="jquery-collision.js"></script>
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+  <link href="style.css" rel="stylesheet" />
   <meta charset="utf-8">
   <title>Tic Tac Toe</title>
   <script>
-  $(function() {
-    $( ".draggable" ).draggable({ snap: ".droppable", });
-    $('.droppable').droppable({
-      drop: function( event, ui)  {
-        $(this)
-              alert("Dropped!");
-      }
+    // alert(
+    //   "The Xyphonoids have invaded the Ovaria's galaxy! They plan to develop a stronghold by conquering consecutive planets and turning them into operational battle stations! If they control three consecutive planets, Ovaria is DOOMED! The Ovarias must fly in and place force-fields over the planets before the Xyphonoids gain control and destroy Ovaria life as we know it! Who will win this great battle? You decide!"
+    // )
+    // var c1position = $('#c1').offset();
+    // var c2position = $('#c2').offset();
+    // var c3position = $('#c3').offset();
+    // var c4position = $('#c4').offset();
+    // var c5position = $('#c5').offset();
+    // var c6position = $('#c6').offset();
+    // var c7position = $('#c7').offset();
+    // var c8position = $('#c8').offset();
+    // var c9position = $('#c9').offset();
+    // var xyphonoid = $('.X');
+    // var ovaria = $('.O');
+    // var xposition = $('.X').position();
+    // var oposition = $('.O').position();
+    // var dragposition = $('.draggable').position();
+
+    var conquered = $("#X").collision("#c1");
+    var saved = $("#O").collision("#c1");
+
+
+    $(function() {
+      $(".draggable").draggable({
+        snap: ".droppable",
+        snapTolerance: 2
+      });
+      $('.droppable').droppable({
+        drop: function(event, ui) {
+          $(this)
+          if (conquered === false) {
+            alert('conquered!');
+          } else if (saved === true) {
+            alert("it worked!")
+          } else {
+            alert('WAT')
+          }
+        }
+      });
     });
-  });
+
   </script>
 </head>
+
 <body>
   <header>
     <div class="draggable">
@@ -29,13 +64,14 @@
       <div id="rocket4"></div>
     </div>
     <div id="h1">
-    <h1>TIC TAC TOE</h1>
-  </div>
+      <h1>TIC TAC TOE</h1>
+    </div>
     <div class="draggable">
       <div id="orocket"></div>
       <div id="O"></div>
     </div>
   </header>
+  <div id="dialog"></div>
   <main>
     <section class="row1">
       <div class="column1">
@@ -72,16 +108,18 @@
     </section>
   </main>
   <footer></footer>
-  <!-- <audio autoplay>
+  <audio autoplay>
     <source src='whereIsMyMind.mp3' voume=.2>
   </audio>
   <script type="text/javascript">
     var audio = document.querySelector('audio');
-    audio.volume=0.0;
+    audio.volume = 0.0;
     setInterval(function() {
       if (audio.volume <= 0.75)
         audio.volume += .05;
     }, 1000);
-  </script> -->
+
+  </script>
 </body>
+
 </html>
