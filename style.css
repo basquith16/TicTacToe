@@ -4,20 +4,18 @@ body {
   background-size: 100% 100%;
 }
 
-#draggable {
+.droppable {
+  height: 70px;
+  width: 70px;
+}
+
+.draggable {
   width: 150px;
   height: 150px;
   padding: 0;
-  margin: 30px 25px 0 20px;
   z-index: 1;
-}
-
-#draggable2 {
-  width: 150px;
-  height: 150px;
-  padding: 0.5em;
-  margin: 25px 0 0 15px;
-  z-index: 1;
+  position:relative;
+  margin-top: 25px;
 }
 
 #X {
@@ -31,7 +29,7 @@ body {
 
 #O {
   background-image: url("http://i.imgur.com/ZB6Nxl6.png");
-  height: 120;
+  height: 60px;
   width: 100px;
   margin: -210px 0 0 25px;
   padding: 0;

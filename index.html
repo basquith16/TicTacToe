@@ -9,25 +9,19 @@
   <title>Tic Tac Toe</title>
   <script>
   $(function() {
-    $( "#draggable" ).draggable({helper: "clone"});
-      snap: ".droppable"
-  });
-
-  $(function() {
-    $( "#draggable2" ).draggable({helper: "clone"});
-  });
-
-    $("#droppable").droppable({
-      drop: function(event, ui)  {
-        $(ui.draggable).droppable({ accept: draggable});
-        alert('fart');
+    $( ".draggable" ).draggable({ snap: ".droppable", });
+    $('.droppable').droppable({
+      drop: function( event, ui)  {
+        $(this)
+              alert("Dropped!");
       }
     });
+  });
   </script>
 </head>
 <body>
   <header>
-    <div id="draggable">
+    <div class="draggable">
       <div id='X'></div>
       <div id="rocket1"></div>
       <div id="rocket2"></div>
@@ -37,43 +31,43 @@
     <div id="h1">
     <h1>TIC TAC TOE</h1>
   </div>
-    <div id="draggable2">
+    <div class="draggable">
       <div id="orocket"></div>
       <div id="O"></div>
     </div>
   </header>
-  <main class="droppable">
+  <main>
     <section class="row1">
       <div class="column1">
-        <div id="c1"></div>
+        <div id="c1" class="droppable"></div>
       </div>
       <div class="column2">
-        <div id="c2"></div>
+        <div id="c2" class="droppable"></div>
       </div>
       <div class="column3">
-        <div id="c3"></div>
+        <div id="c3" class="droppable"></div>
       </div>
     </section>
     <section class="row2">
       <div class="column1">
-        <div id="c4"></div>
+        <div id="c4" class="droppable"></div>
       </div>
       <div class="column2">
-        <div id="c5"></div>
+        <div id="c5" class="droppable"></div>
       </div>
       <div class="column3">
-        <div id="c6"></div>
+        <div id="c6" class="droppable"></div>
       </div>
     </section>
     <section class="row3">
       <div class="column1">
-        <div id="c7"></div>
+        <div id="c7" class="droppable"></div>
       </div>
       <div class="column2">
-        <div id="c8"></div>
+        <div id="c8" class="droppable"></div>
       </div>
       <div class="column3">
-        <div id="c9"></div>
+        <div id="c9" class="droppable"></div>
       </div>
     </section>
   </main>
