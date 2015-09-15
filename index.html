@@ -13,22 +13,62 @@
     // alert(
     //   "The Xyphonoids have invaded the Ovaria's galaxy! They plan to develop a stronghold by conquering consecutive planets and turning them into operational battle stations! If they control three consecutive planets, Ovaria is DOOMED! The Ovarias must fly in and place force-fields over the planets before the Xyphonoids gain control and destroy Ovaria life as we know it! Who will win this great battle? You decide!"
     // )
-    // var c1position = $('#c1').offset();
-    // var c2position = $('#c2').offset();
-    // var c3position = $('#c3').offset();
-    // var c4position = $('#c4').offset();
-    // var c5position = $('#c5').offset();
-    // var c6position = $('#c6').offset();
-    // var c7position = $('#c7').offset();
-    // var c8position = $('#c8').offset();
-    // var c9position = $('#c9').offset();
-    // var xyphonoid = $('.X');
-    // var ovaria = $('.O');
-    // var xposition = $('.X').position();
-    // var oposition = $('.O').position();
-    // var dragposition = $('.draggable').position();
 
-    var conquered = $("#X").collision("#c1");
+    var xyphonoid = $('.X');
+    var ovaria = $('.O');
+    var draggableO = $('.draggableO')
+    var draggableX = $('.draggableX')
+    var droppable = $('.droppable')
+
+    var mars = '';
+    var uranus = '';
+    var earth = '';
+    var neptune = '';
+    var theSun = '';
+    var venus = '';
+    var mercury = '';
+    var saturn = '';
+    var jupiter = '';
+
+  var planets = {
+    mars,
+    uranus,
+    earth,
+    neptune,
+    theSun,
+    venus,
+    mercury,
+    saturn,
+    jupiter
+  }
+
+  var win = function() {
+    if((mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
+       (mars === xyphonoid) && (neptune === xyphonoid) && (mercury === xyphonoid) ||
+      (neptune === xyphonoid) && (theSun === xyphonoid) && (venus=== xyphonoid) ||
+      (mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
+      (uranus === xyphonoid) && (theSun === xyphonoid) && (saturn === xyphonoid) ||
+      (earth === xyphonoid) && (venus === xyphonoid) && (jupiter === xyphonoid) ||
+      (mercury === xyphonoid) && (saturn === xyphonoid) && (jupiter === xyphonoid) ||
+      (mercury === xyphonoid) && (theSun === xyphonoid) && (earth === xyphonoid)) {
+
+        alert("The Xyphonoids have gained control of the galaxy! Prepare for impending DOOM!")
+
+    } else if ((mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
+       (mars === ovaria) && (neptune === ovaria) && (mercury === ovaria) ||
+      (neptune === ovaria) && (theSun === ovaria) && (venus=== ovaria) ||
+      (mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
+      (uranus === ovaria) && (theSun === ovaria) && (saturn === ovaria) ||
+      (earth === ovaria) && (venus === ovaria) && (jupiter === ovaria) ||
+      (mercury === ovaria) && (saturn === ovaria) && (jupiter === ovaria) ||
+      (mercury === ovaria) && (theSun === ovaria) && (earth === ovaria)) {
+
+        alert("The Ovarias have saved the galaxy from destruction! The Xyphonoids have retreated!")
+    }
+  };
+
+
+    var conquered = $(xyphonoid).collision("#c1");
     var saved = $("#O").collision("#c1");
 
 
@@ -39,16 +79,10 @@
       });
       $('.droppable').droppable({
         drop: function(event, ui) {
+          accept: ".draggableX",
           $(this)
-          if (conquered === false) {
-            alert('conquered!');
-          } else if (saved === true) {
-            alert("it worked!")
-          } else {
-            alert('WAT')
-          }
         }
-      });
+      })
     });
 
   </script>
@@ -75,35 +109,35 @@
   <main>
     <section class="row1">
       <div class="column1">
-        <div id="c1" class="droppable"></div>
+        <div id="c3" class="droppable"></div>
       </div>
       <div class="column2">
         <div id="c2" class="droppable"></div>
       </div>
       <div class="column3">
-        <div id="c3" class="droppable"></div>
+        <div id="c1" class="droppable"></div>
       </div>
     </section>
     <section class="row2">
       <div class="column1">
-        <div id="c4" class="droppable"></div>
+        <div id="c6" class="droppable"></div>
       </div>
       <div class="column2">
         <div id="c5" class="droppable"></div>
       </div>
       <div class="column3">
-        <div id="c6" class="droppable"></div>
+        <div id="c4" class="droppable"></div>
       </div>
     </section>
     <section class="row3">
       <div class="column1">
-        <div id="c7" class="droppable"></div>
+        <div id="c9" class="droppable"></div>
       </div>
       <div class="column2">
         <div id="c8" class="droppable"></div>
       </div>
       <div class="column3">
-        <div id="c9" class="droppable"></div>
+        <div id="c7" class="droppable"></div>
       </div>
     </section>
   </main>
