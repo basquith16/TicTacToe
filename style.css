@@ -9,19 +9,22 @@ body {
   width: 80px;
 }
 
-.draggable {
+.draggableO {
   width: 150px;
   height: 150px;
   padding: 0;
   z-index: 1;
   position: relative;
-  margin-top: 25px;
-  /*-webkit-transition-property: -webkit-transform;
-  -webkit-transition-duration: 1s;
-  -moz-transition-property: -moz-transform;
-  -moz-transition-duration: 1s;
-  transition-property: transform;
-  transition-duration: 1s;*/
+  margin: -10px 0 0 20px;
+}
+
+.draggableX {
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  z-index: 1;
+  position: relative;
+  margin: 10px 0 0 200px;
 }
 
 #X {
@@ -33,40 +36,11 @@ body {
   padding: 0;
 }
 
-/*.draggable:hover{
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: rotate;
-    -moz-animation-duration: 2s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    animation-name: rotate;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-@-webkit-keyframes rotate {
-    from {-webkit-transform: rotate(0deg);}
-    to {-webkit-transform: rotate(360deg);}
-}
-
-@-moz-keyframes rotate {
-    from {-moz-transform: rotate(0deg);}
-    to {-moz-transform: rotate(360deg);}
-}
-
-@keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}*/
-
 #O {
   background-image: url("http://i.imgur.com/ZB6Nxl6.png");
   height: 60px;
   width: 100px;
-  margin: -210px 0 0 25px;
+  margin: -200px 0 0 25px;
   padding: 0;
   z-index: 1;
 }
@@ -110,7 +84,7 @@ body {
 #orocket {
   background-image: url("http://i.imgur.com/vdkJjqB.gif");
   background-size: 100px 50px;
-  margin: 25px 0 0 25px;
+  margin: 50px 0 0 25px;
   z-index: -1:
 }
 
@@ -122,12 +96,13 @@ body {
   font-family: Myriad Pro;
   font-size: 48px;
   text-shadow: 5px 5px purple;
+  margin-left: 25px;
 }
 
 header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   text-align: center;
   padding-bottom: 0;
 }

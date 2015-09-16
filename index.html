@@ -4,7 +4,6 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="jquery-collision.js"></script>
   <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
   <link href="style.css" rel="stylesheet" />
   <meta charset="utf-8">
@@ -14,8 +13,8 @@
     //   "The Xyphonoids have invaded the Ovaria's galaxy! They plan to develop a stronghold by conquering consecutive planets and turning them into operational battle stations! If they control three consecutive planets, Ovaria is DOOMED! The Ovarias must fly in and place force-fields over the planets before the Xyphonoids gain control and destroy Ovaria life as we know it! Who will win this great battle? You decide!"
     // )
 
-    var xyphonoid = $('.X');
-    var ovaria = $('.O');
+    var xyphonoid = $('#X');
+    var ovaria = $('#O');
     var draggableO = $('.draggableO')
     var draggableX = $('.draggableX')
     var droppable = $('.droppable')
@@ -30,57 +29,79 @@
     var saturn = '';
     var jupiter = '';
 
-  var planets = {
-    mars,
-    uranus,
-    earth,
-    neptune,
-    theSun,
-    venus,
-    mercury,
-    saturn,
-    jupiter
-  }
+    var planets = {
+      mars,
+      uranus,
+      earth,
+      neptune,
+      theSun,
+      venus,
+      mercury,
+      saturn,
+      jupiter
+    }
 
-  var win = function() {
-    if((mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
-       (mars === xyphonoid) && (neptune === xyphonoid) && (mercury === xyphonoid) ||
-      (neptune === xyphonoid) && (theSun === xyphonoid) && (venus=== xyphonoid) ||
-      (mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
-      (uranus === xyphonoid) && (theSun === xyphonoid) && (saturn === xyphonoid) ||
-      (earth === xyphonoid) && (venus === xyphonoid) && (jupiter === xyphonoid) ||
-      (mercury === xyphonoid) && (saturn === xyphonoid) && (jupiter === xyphonoid) ||
-      (mercury === xyphonoid) && (theSun === xyphonoid) && (earth === xyphonoid)) {
+    var win = function() {
+      if ((mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
+        (mars === xyphonoid) && (neptune === xyphonoid) && (mercury === xyphonoid) ||
+        (neptune === xyphonoid) && (theSun === xyphonoid) && (venus === xyphonoid) ||
+        (mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
+        (uranus === xyphonoid) && (theSun === xyphonoid) && (saturn === xyphonoid) ||
+        (earth === xyphonoid) && (venus === xyphonoid) && (jupiter === xyphonoid) ||
+        (mercury === xyphonoid) && (saturn === xyphonoid) && (jupiter === xyphonoid) ||
+        (mercury === xyphonoid) && (theSun === xyphonoid) && (earth === xyphonoid)) {
 
         alert("The Xyphonoids have gained control of the galaxy! Prepare for impending DOOM!")
 
-    } else if ((mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
-       (mars === ovaria) && (neptune === ovaria) && (mercury === ovaria) ||
-      (neptune === ovaria) && (theSun === ovaria) && (venus=== ovaria) ||
-      (mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
-      (uranus === ovaria) && (theSun === ovaria) && (saturn === ovaria) ||
-      (earth === ovaria) && (venus === ovaria) && (jupiter === ovaria) ||
-      (mercury === ovaria) && (saturn === ovaria) && (jupiter === ovaria) ||
-      (mercury === ovaria) && (theSun === ovaria) && (earth === ovaria)) {
+      } else if ((mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
+        (mars === ovaria) && (neptune === ovaria) && (mercury === ovaria) ||
+        (neptune === ovaria) && (theSun === ovaria) && (venus === ovaria) ||
+        (mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
+        (uranus === ovaria) && (theSun === ovaria) && (saturn === ovaria) ||
+        (earth === ovaria) && (venus === ovaria) && (jupiter === ovaria) ||
+        (mercury === ovaria) && (saturn === ovaria) && (jupiter === ovaria) ||
+        (mercury === ovaria) && (theSun === ovaria) && (earth === ovaria)) {
 
         alert("The Ovarias have saved the galaxy from destruction! The Xyphonoids have retreated!")
-    }
-  };
-
-
-    var conquered = $(xyphonoid).collision("#c1");
-    var saved = $("#O").collision("#c1");
-
+      }
+    };
 
     $(function() {
-      $(".draggable").draggable({
-        snap: ".droppable",
-        snapTolerance: 2
-      });
-      $('.droppable').droppable({
-        drop: function(event, ui) {
-          accept: ".draggableX",
-          $(this)
+          $(".draggableX").draggable();
+          $(".draggableO").draggable();
+
+          $('.droppable').droppable({
+              drop: function(event, ui) {
+
+            var current_square = $(this).attr("id");
+
+                if (current_square === 'c1' && ui.draggable.hasClass("draggableX")) {
+                  alert("Earth has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c2'  && ui.draggable.hasClass ("draggableX")) {
+                    alert("Uranus has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c3' && ui.draggable.hasClass("draggableX")) {
+                      alert("Mars has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c4' && ui.draggable.hasClass("draggableX")) {
+                        alert("Neptune has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c5' && ui.draggable.hasClass("draggableX")) {
+                          alert("The sun has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c6' && ui.draggable.hasClass("draggableX")) {
+                            alert("Venus has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c7' && ui.draggable.hasClass("draggableX")) {
+                              alert("Mercury has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c8' && ui.draggable.hasClass("draggableX")) {
+                                alert("Saturn has been conquered by the Xyphonoids!")
+                }
+                else if (current_square === 'c9' && ui.draggable.hasClass("draggableX")) {
+                                  alert("Jupiter has been conquered by the Xyphonoids!")
+          }
         }
       })
     });
@@ -90,7 +111,7 @@
 
 <body>
   <header>
-    <div class="draggable">
+    <div class="draggableX">
       <div id='X'></div>
       <div id="rocket1"></div>
       <div id="rocket2"></div>
@@ -100,7 +121,7 @@
     <div id="h1">
       <h1>TIC TAC TOE</h1>
     </div>
-    <div class="draggable">
+    <div class="draggableO">
       <div id="orocket"></div>
       <div id="O"></div>
     </div>
