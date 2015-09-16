@@ -75,7 +75,34 @@
 
             var current_square = $(this).attr("id");
 
-                if (current_square === 'c1' && ui.draggable.hasClass("draggableX")) {
+                if (current_square === 'c1' && ui.draggable.hasClass("draggableO")) {
+                  alert("Earth has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c2'  && ui.draggable.hasClass ("draggableO")) {
+                    alert("Uranus has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c3' && ui.draggable.hasClass("draggableO")) {
+                      alert("Mars has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c4' && ui.draggable.hasClass("draggableO")) {
+                        alert("Neptune has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c5' && ui.draggable.hasClass("draggableO")) {
+                          alert("The sun has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c6' && ui.draggable.hasClass("draggableO")) {
+                            alert("Venus has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c7' && ui.draggable.hasClass("draggableO")) {
+                              alert("Mercury has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c8' && ui.draggable.hasClass("draggableO")) {
+                                alert("Saturn has been saved by the Ovarias!")
+                }
+                else if (current_square === 'c9' && ui.draggable.hasClass("draggableO")) {
+                                  alert("Jupiter has been saved by the Ovarias!")
+                                }
+                else if (current_square === 'c1' && ui.draggable.hasClass("draggableX")) {
                   alert("Earth has been conquered by the Xyphonoids!")
                 }
                 else if (current_square === 'c2'  && ui.draggable.hasClass ("draggableX")) {
@@ -101,7 +128,7 @@
                 }
                 else if (current_square === 'c9' && ui.draggable.hasClass("draggableX")) {
                                   alert("Jupiter has been conquered by the Xyphonoids!")
-          }
+}
         }
       })
     });
