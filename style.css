@@ -9,6 +9,15 @@ body {
   width: 80px;
 }
 
+#action {
+  font-size: 26px;
+  font-family: Myriad Pro;
+  color: white;
+  margin: 0 0 0 0;
+  padding: 0;
+  line-height: 26px;
+}
+
 .draggableO {
   width: 150px;
   height: 150px;
@@ -97,6 +106,7 @@ body {
   font-size: 48px;
   text-shadow: 5px 5px purple;
   margin-left: 25px;
+  line-height: 5px;
 }
 
 header {
