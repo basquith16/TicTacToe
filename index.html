@@ -30,27 +30,27 @@
     var saturn = '';
     var jupiter = '';
 
-    var planets = {
-      mars,
-      uranus,
-      earth,
-      neptune,
-      theSun,
-      venus,
-      mercury,
-      saturn,
-      jupiter
-    }
+    // var planets = {
+    //   mars,
+    //   uranus,
+    //   earth,
+    //   neptune,
+    //   theSun,
+    //   venus,
+    //   mercury,
+    //   saturn,
+    //   jupiter
+    // }
 
     var win = function() {
-      if ((mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
-        (mars === xyphonoid) && (neptune === xyphonoid) && (mercury === xyphonoid) ||
-        (neptune === xyphonoid) && (theSun === xyphonoid) && (venus === xyphonoid) ||
-        (mars === xyphonoid) && (uranus === xyphonoid) && (earth === xyphonoid) ||
-        (uranus === xyphonoid) && (theSun === xyphonoid) && (saturn === xyphonoid) ||
-        (earth === xyphonoid) && (venus === xyphonoid) && (jupiter === xyphonoid) ||
-        (mercury === xyphonoid) && (saturn === xyphonoid) && (jupiter === xyphonoid) ||
-        (mercury === xyphonoid) && (theSun === xyphonoid) && (earth === xyphonoid)) {
+      if ((earth === 'xyphonoid') && (uranus === 'xyphonoid') && (mars === 'xyphonoid') ||
+        (earth === 'xyphonoid') && (neptune === 'xyphonoid') && (mercury === 'xyphonoid') ||
+        (neptune === 'xyphonoid') && (theSun === 'xyphonoid') && (venus === 'xyphonoid') ||
+        (mars === 'xyphonoid') && (venus === 'xyphonoid') && (jupiter=== 'xyphonoid') ||
+        (uranus === 'xyphonoid') && (theSun === 'xyphonoid') && (saturn === 'xyphonoid') ||
+        (mars === 'xyphonoid') && (theSun === 'xyphonoid') && (mercury === 'xyphonoid') ||
+        (mercury === 'xyphonoid') && (saturn === 'xyphonoid') && (jupiter === 'xyphonoid') ||
+        (jupiter === 'xyphonoid') && (theSun === 'xyphonoid') && (earth === 'xyphonoid')) {
 
         alert("The Xyphonoids have gained control of the galaxy! Prepare for impending DOOM!")
 
@@ -86,10 +86,12 @@
 
                 if (current_square === 'c1' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
-                changeText("Earth has been saved by the Ovarias!");
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
+                  changeText("Earth has been saved by the Ovarias!");
                 }
                 else if (current_square === 'c2'  && ui.draggable.hasClass ("draggableO")) {
                   reset_text();
+                  scorch();
                     changeText("Uranus has been saved by the Ovarias!")
                 }
                 else if (current_square === 'c3' && ui.draggable.hasClass("draggableO")) {
@@ -122,43 +124,62 @@
                                 }
                 else if (current_square === 'c1' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
-                  changeText("Earth has been conquered by the Xyphonoids!")
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png');
+                        changeText("Earth has been conquered by the Xyphonoids!")
+                        earth = 'xyphonoid';
                 }
                 else if (current_square === 'c2'  && ui.draggable.hasClass ("draggableX")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
                     changeText("Uranus has been conquered by the Xyphonoids!")
+                    uranus = 'xyphonoid';
                 }
                 else if (current_square === 'c3' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
-                      changeText("Mars has been conquered by the Xyphonoids!")
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
+                      changeText("Mars has been conquered by the Xyphonoids!");
+                      mars = 'xyphonoid';
                 }
                 else if (current_square === 'c4' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
-                        changeText("Neptune has been conquered by the Xyphonoids!")
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
+                        changeText("Neptune has been conquered by the Xyphonoids!");
+                        neptune = 'xyphonoid';
                 }
                 else if (current_square === 'c5' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
                           changeText("The sun has been conquered by the Xyphonoids!")
+                          theSun = 'xyphonoid';
                 }
                 else if (current_square === 'c6' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
                             changeText("Venus has been conquered by the Xyphonoids!")
+                            venus = 'xyphonoid';
                 }
                 else if (current_square === 'c7' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
                               changeText("Mercury has been conquered by the Xyphonoids!")
+                              mercury = 'xyphonoid';
                 }
                 else if (current_square === 'c8' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
                                 changeText("Saturn has been conquered by the Xyphonoids!")
+                                saturn = 'xyphonoid';
                 }
                 else if (current_square === 'c9' && ui.draggable.hasClass("draggableX")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
                                   changeText("Jupiter has been conquered by the Xyphonoids!")
+                                  jupiter = 'xyphonoid';
 }
+win();
         }
       })
-    });
+    })
 
   </script>
 </head>
