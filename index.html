@@ -54,14 +54,14 @@
 
         alert("The Xyphonoids have gained control of the galaxy! Prepare for impending DOOM!")
 
-      } else if ((mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
-        (mars === ovaria) && (neptune === ovaria) && (mercury === ovaria) ||
-        (neptune === ovaria) && (theSun === ovaria) && (venus === ovaria) ||
-        (mars === ovaria) && (uranus === ovaria) && (earth === ovaria) ||
-        (uranus === ovaria) && (theSun === ovaria) && (saturn === ovaria) ||
-        (earth === ovaria) && (venus === ovaria) && (jupiter === ovaria) ||
-        (mercury === ovaria) && (saturn === ovaria) && (jupiter === ovaria) ||
-        (mercury === ovaria) && (theSun === ovaria) && (earth === ovaria)) {
+      } else if ((earth === 'ovaria') && (uranus === 'ovaria') && (mars === 'ovaria') ||
+        (earth === 'ovaria') && (neptune === 'ovaria') && (mercury === 'ovaria') ||
+        (neptune === 'ovaria') && (theSun === 'ovaria') && (venus === 'ovaria') ||
+        (mars === 'ovaria') && (venus === 'ovaria') && (jupiter === 'ovaria') ||
+        (uranus === 'ovaria') && (theSun === 'ovaria') && (saturn === 'ovaria') ||
+        (mars === 'ovaria') && (theSun=== 'ovaria') && (mercury === 'ovaria') ||
+        (mercury === 'ovaria') && (saturn === 'ovaria') && (jupiter === 'ovaria') ||
+        (jupiter === 'ovaria') && (theSun === 'ovaria') && (earth === 'ovaria')) {
 
         alert("The Ovarias have saved the galaxy from destruction! The Xyphonoids have retreated!")
       }
@@ -86,41 +86,57 @@
 
                 if (current_square === 'c1' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
-                  $(this).css('background-image', 'url(http://i.imgur.com/tjQLYPX.png)');
+                  $(this).css('background-image', 'url(http://i.imgur.com/0cBHUU3.png');
                   changeText("Earth has been saved by the Ovarias!");
+                  earth = 'ovaria';
                 }
                 else if (current_square === 'c2'  && ui.draggable.hasClass ("draggableO")) {
                   reset_text();
-                  scorch();
                     changeText("Uranus has been saved by the Ovarias!")
+                    $(this).css('background-image', 'url(http://i.imgur.com/xcqk7Km.png');
+                    uranus = 'ovaria'
                 }
                 else if (current_square === 'c3' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/4iLcaae.png');
                       changeText("Mars has been saved by the Ovarias!")
+                      mars = 'ovaria'
                 }
                 else if (current_square === 'c4' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
-                      changeText("Neptune has been saved by the Ovarias!")
+                  $(this).css('background-image', 'url(http://i.imgur.com/SS0IRXq.png');
+                      changeText("Neptune has been saved by the Ovarias!");
+                      neptune = ovaria;
                 }
                 else if (current_square === 'c5' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
-                          changeText("The sun has been saved by the Ovarias!")
+                  $(this).css('background-image', 'url(http://i.imgur.com/pekTKHw.png');
+                          changeText("The sun has been saved by the Ovarias!");
+                          theSun = 'ovaria';
                 }
                 else if (current_square === 'c6' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/EWbippL.png');
                             changeText("Venus has been saved by the Ovarias!")
+                            venus = 'ovaria'
                 }
                 else if (current_square === 'c7' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
-                              changeText("Mercury has been saved by the Ovarias!")
+                  $(this).css('background-image', 'url(http://i.imgur.com/CPntIMv.png');
+                              changeText("Mercury has been saved by the Ovarias!");
+                              mercury = 'ovaria';
                 }
                 else if (current_square === 'c8' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
-                                changeText("Saturn has been saved by the Ovarias!")
+                  $(this).css('background-image', 'url(http://i.imgur.com/cLeNrxm.png');
+                                changeText("Saturn has been saved by the Ovarias!");
+                                saturn = 'ovaria';
                 }
                 else if (current_square === 'c9' && ui.draggable.hasClass("draggableO")) {
                   reset_text();
+                  $(this).css('background-image', 'url(http://i.imgur.com/Vi0m3On.png');
                                   changeText("Jupiter has been saved by the Ovarias!")
+                                  jupiter = 'ovaria';
                                 }
                 else if (current_square === 'c1' && ui.draggable.hasClass("draggableX")) {
                   reset_text();

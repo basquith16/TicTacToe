@@ -187,8 +187,8 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/u3hC7PY.png");
   opacity: .5;
-  background-size: 50px 50px;
-  margin: 15px 0 0 70px;
+  background-size: 80px 80px;
+  margin: 2px 0 0 60px;
 }
 
 #c2 {
@@ -196,8 +196,8 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/hzsPgPs.png.png");
   opacity: .5;
-  background-size: 50px 50px;
-  margin: 15px 0 0 75px;
+  background-size: 80px 80px;
+  margin: 2px 0 0 65px;
 }
 
 #c3 {
@@ -205,8 +205,8 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/JXDYDbc.png");
   opacity: .4;
-  background-size: 50px 50px;
-  margin: 15px 0 0 70px;
+  background-size: 80px 80px;
+  margin: 5px 0 0 65px;
 }
 
 #c4 {
@@ -214,8 +214,8 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/EI0AIBW.png");
   opacity: .4;
-  background-size: 50px 50px;
-  margin: 15px 0 0 75px;
+  background-size: 80px 80px;
+  margin: 5px 0 0 65px;
 }
 
 #c5 {
@@ -232,8 +232,8 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/4Qhmru5.png");
   opacity: .4;
-  background-size: 50px 50px;
-  margin: 20px 0 0 80px;
+  background-size: 80px 80px;
+  margin: 5px 0 0 65px;
 }
 
 #c7 {
@@ -241,8 +241,8 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/BIATFCZ.png");
   opacity: .4;
-  background-size: 50px 50px;
-  margin: 20px 0 0 80px;
+  background-size: 80px 80px;
+  margin: 0 0 0 60px;
 }
 
 #c8 {
@@ -250,8 +250,8 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/Fx2cfD6.png");
   opacity: .4;
-  background-size: 50px 50px;
-  margin: 20px 0 0 75px;
+  background-size: 80px 80px;
+  margin: 0 0 0 60px;
 }
 
 #c9 {
@@ -259,6 +259,6 @@ div {
   flex-direction: column;
   background-image: url("http://i.imgur.com/ohuUIMP.png");
   opacity: .4;
-  background-size: 50px 50px;
-  margin: 20px 0 0 75px;
+  background-size: 80px 80px;
+  margin: 3px 0 0 60px;
 }
