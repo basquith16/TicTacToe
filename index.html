@@ -256,6 +256,28 @@ win();
 </head>
 
 <body>
+  <div id='opening'>
+    <audio>
+    <source src="Star Wars Theme Song (8 Bit Remix Cover Version) - 8 Bit Universe.mp3" type="audio/mp3" />
+  </audio>
+  <script>
+    setTimeout(function () {
+      new Audio('Star Wars Theme Song (8 Bit Remix Cover Version) - 8 Bit Universe.mp3').play();
+       }, 7500);
+
+       $("body").keydown(function(key){
+    if (key.which == 13){
+        document.getElementById('opening').style.display = 'none';
+        $(".game").show();
+        audio.addEventListener("canplaythrough", function () {
+        setTimeout(function(){
+            audio.pause();
+          }
+    })
+});
+ </script>
+     </div>
+  <div class='game'>
   <header>
     <div class="draggableX">
       <div id='X'></div>
@@ -275,7 +297,6 @@ win();
   </header>
   <div id="dialog"></div>
   <main>
-    <!-- <div class="opening"></div> -->
     <section class="row1">
       <div class="column1">
         <div id="c3" class="droppable"></div>
@@ -314,22 +335,6 @@ win();
   <!-- <audio autoplay>
     <source src='whereIsMyMind.mp3' voume=.2>
   </audio> -->
-  <!-- <script type="text/javascript"> -->
-  // <var audio = document.querySelector('audio'); setTimeout(function() { audioPlayer.play(); }, 15000)"/>
- <!-- <source src="Star Wars Theme Song (8 Bit Remix Cover Version) - 8 Bit Universe.mp3" type="audio/mp3" /> -->
- <!-- setTimeout(function () {
-    new Audio('Star Wars Theme Song (8 Bit Remix Cover Version) - 8 Bit Universe.mp3').play();
-  }, 7500); --> -->
-
-
-
-
-
- //  if (audio.volume <= 0.75)
- //   audio.volume += .05;
- // }, 10000);
-
-  </script>
+</game>
 </body>
-
 </html>
