@@ -1,4 +1,9 @@
-body {
+.opening {
+  width: 1200px;
+  height: 900px;
+  background-image: url("Untitled-1.gif")
+}
+  body {
   background-image: url("http://wyeagricolaclub.org.uk/images/galleries/5/desktop-background-space-hd-background-wallpaper-48.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
