@@ -17,8 +17,9 @@
     var draggableX = $('.draggableX')
     var droppable = $('.droppable')
     var xTurn = true;
-    var oTurn = true;
-
+    var oTurn = false;
+    var player1 = '';
+    var player2 = '';
 //Created object Planet with two elements dictating whether the planet(square) has been played and if it is an X or O
     function Planet(controlled, byWho) {
       this.controlled = controlled;
@@ -69,9 +70,31 @@
     function reset_text() {
       $('#action').empty()
     }
- console.log(oTurn);
+
+    function Pilots (name, fleet) {
+      this.name = name;
+      this.fleet = fleet;
+    }
+//
+//     var name1 = window.prompt("New Xyphonoid Recruit, Please enter your name!")
+//     var name2 = window.prompt("New Ovaria Recruit, Please enter your name!")
+//
+//     var pilot_one = new Pilots(name1, 'Xyphonoid');
+//     var pilot_two = new Pilots(name2, 'Ovaria');
+//
+// JSON.stringify(pilot_one);
+// console.log(pilot_one.name);
+//
+// function enterInfo() {
+// $('.pilotInfo').append(pilot_one.name);
+// }
+
+    // function reset_pilotInfo() {
+    //   $('h4').empty()
+    // }
+
+
     $(function() {
-      // if((xTurn === 'true' && oTurn === 'false') || (xTurn === 'false' && oTurn === 'true')){
 
           $(".draggableX").draggable();
           $(".draggableO").draggable();
@@ -249,8 +272,9 @@
 win();
 // }
 }
-        })
+
       })
+    })
 
   </script>
 </head>
@@ -269,14 +293,10 @@ win();
     if (key.which == 13){
         document.getElementById('opening').style.display = 'none';
         $(".game").show();
-        audio.addEventListener("canplaythrough", function () {
-        setTimeout(function(){
-            audio.pause();
-          }
-    })
+    }
 });
  </script>
-     </div>
+ </div>
   <div class='game'>
   <header>
     <div class="draggableX">
@@ -330,6 +350,29 @@ win();
         <div id="c7" class="droppable"></div>
       </div>
     </section>
+    <div class="pilot1_info">
+      <h3 id='infoHere'>Pilot Information</h3>
+      <form action='game_info' method='push' id='pilot1Info'>
+        <input type="text" name="Xyphonoid Pilot Name" value="Pilot X Name">
+      <input type="button" class="addButton" value="Join Xyphonoid Fleet"></button>
+    </form>
+    <form action='game_info' method='push' id= pilot2Info>
+      <input type="text" name="Ovaria Pilot Name" value="Pilot O Name">
+    <input type="button" class="addButton" value="Join Ovaria Fleet"></button>
+  </form>
+  <script>
+    function Pilots (){
+      var name = document.getElementById('pilot1Info').target;
+      $('infoHere').innerHTML(name);
+      $('infoHere').innerHTML(name);
+
+      var name = document.getElementById('pilot2Info').target;
+      $('infoHere').innerHTML(name);
+      $('infoHere').innerHTML(name);
+    }
+    Pilots();
+    </script>
+    </div>
   </main>
   <footer></footer>
   <!-- <audio autoplay>

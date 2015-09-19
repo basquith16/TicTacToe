@@ -10,6 +10,11 @@ body {
   position: relative;
 }
 
+form {
+  margin: 30px 0 0 30px;
+  z-index: 4;
+}
+
 .game {
   height: 100%;
   width: 100%;
@@ -25,6 +30,15 @@ body {
 }
 
 #action {
+  font-size: 26px;
+  font-family: Myriad Pro;
+  color: white;
+  margin: 0 0 0 0;
+  padding: 0;
+  line-height: 26px;
+}
+
+#pilotInfo {
   font-size: 26px;
   font-family: Myriad Pro;
   color: white;
@@ -278,4 +292,12 @@ div {
   opacity: .4;
   background-size: 80px 80px;
   margin: 3px 0 0 60px;
+}
+
+.pilot_info {
+  height: 600px;
+  width: 350px;
+  display: block;
+  border: 2px solid purple;
+  margin: -500px 0 0 900px;
 }
