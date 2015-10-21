@@ -1,13 +1,14 @@
 //Global Variables
 var xyphonoid = $('#X');
 var ovaria = $('#O');
-var draggableO = $('.draggableO')
-var draggableX = $('.draggableX')
-var droppable = $('.droppable')
+var draggableO = $('.draggableO');
+var draggableX = $('.draggableX');
+var droppable = $('.droppable');
 var xTurn = true;
 var oTurn = false;
 var player1 = '';
 var player2 = '';
+
 //Created object Planet with two elements dictating whether the planet(square) has been played and if it is an X or O
 function Planet(controlled, byWho) {
   this.controlled = controlled;
@@ -50,6 +51,10 @@ var win = function() {
     alert("The Ovarias have saved the galaxy from destruction! The Xyphonoids have retreated!")
     window.location.reload();
   }
+    else if(earth.controlled && uranus.controlled && mars.controlled && neptune.controlled && mercury.controlled && theSun.controlled && venus.controlled && jupiter.controlled && saturn.controlled == true){
+      alert("Both fleets are depleted and the fate of the galaxy is still up in the air! The battle is over but the war has just begun!")
+      window.location.reload();
+    }
 };
 
 function changeText(text) {
@@ -230,27 +235,27 @@ $(function() {
 
 //Router
 
-var Router = Backbone.Router.extend({
-
-  routes: {
-    '': 'intro',
-    ':game': 'showGame'
-  },
-
-  intro: function() {
-    $.get('intro.html').then(function(page) {
-      $('body').html(page);
-    })
-  },
-
-  showGame: function() {
-    $.get('game.html').then(function(page) {
-      $('body').html(page);
-        });
-    }
-  });
-
-$(function() {
-  const router = new Router();
-  Backbone.history.start();
-});
+// var Router = Backbone.Router.extend({
+//
+//   routes: {
+//     '': 'intro',
+//     ':game': 'showGame'
+//   },
+//
+//   intro: function() {
+//     $.get('intro.html').then(function(page) {
+//       $('body').html(page);
+//     })
+//   },
+//
+//   showGame: function() {
+//     $.get('game.html').then(function(page) {
+//       $('body').html(page);
+//         });
+//     }
+//   });
+//
+// $(function() {
+//   const router = new Router();
+//   Backbone.history.start();
+// });
