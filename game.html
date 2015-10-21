@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tictactoe/Game</title>
+  </head>
+  <body>
+    <div class='game'>
+    <header>
+      <div class="draggableX">
+        <div id='X'></div>
+        <div id="rocket1"></div>
+        <div id="rocket2"></div>
+        <div id="rocket3"></div>
+        <div id="rocket4"></div>
+      </div>
+      <div id="h1">
+        <h1>TIC TAC TOE</h1>
+        <h2 id="action"><h2>
+      </div>
+      <div class="draggableO">
+        <div id="orocket"></div>
+        <div id="O"></div>
+      </div>
+    </header>
+    <div id="dialog"></div>
+    <main>
+      <section class="row1">
+        <div class="column1">
+          <div id="c3" class="droppable"></div>
+        </div>
+        <div class="column2">
+          <div id="c2" class="droppable"></div>
+        </div>
+        <div class="column3">
+          <div id="c1" class="droppable"></div>
+        </div>
+      </section>
+      <section class="row2">
+        <div class="column1">
+          <div id="c6" class="droppable"></div>
+        </div>
+        <div class="column2">
+          <div id="c5" class="droppable"></div>
+        </div>
+        <div class="column3">
+          <div id="c4" class="droppable"></div>
+        </div>
+      </section>
+      <section class="row3">
+        <div class="column1">
+          <div id="c9" class="droppable"></div>
+        </div>
+        <div class="column2">
+          <div id="c8" class="droppable"></div>
+        </div>
+        <div class="column3">
+          <div id="c7" class="droppable"></div>
+        </div>
+      </section>
+      <div class="pilot1_info">
+        <h3 id='infoHere'>Pilot Information</h3>
+        <form action='game_info' method='push' id='pilot1Info'>
+          <input type="text" name="Xyphonoid Pilot Name" value="Pilot X Name">
+        <input type="button" class="addButton" value="Join Xyphonoid Fleet"></button>
+      </form>
+      <form action='game_info' method='push' id= pilot2Info>
+        <input type="text" name="Ovaria Pilot Name" value="Pilot O Name">
+      <input type="button" class="addButton" value="Join Ovaria Fleet"></button>
+    </form>
+      </div>
+    </main>
+  </div>
+  </body>
+</html>

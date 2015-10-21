@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tictactoe/Intro</title>
+</head>
+<body>
+  <div id='opening'>
+    <audio>
+      <source src="Star Wars Theme Song (8 Bit Remix Cover Version) - 8 Bit Universe.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      setTimeout(function() {
+        new Audio('Star Wars Theme Song (8 Bit Remix Cover Version) - 8 Bit Universe.mp3').play();
+      }, 7500);
+
+      $("body").keydown(function(key) {
+        if (key.which == 13) {
+          $.get('game.html').then(function(page) {
+            $('body').html(page);
+          });
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>
