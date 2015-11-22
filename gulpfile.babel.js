@@ -7,6 +7,7 @@ import {
 }
 from 'wiredep';
 
+const connect = require('gulp-connect');
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
@@ -183,4 +184,11 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
+});
+
+gulp.task('default', ['webserver']);
+gulp.task('webserver', function() {
+  connect.server({
+    livereload: true
+  });
 });
