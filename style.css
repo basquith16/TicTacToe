@@ -1,12 +1,33 @@
 body {
   height: 100%;
   width: 100%;
+  overflow-y: hidden;
+}
+
+iframe {
+  margin-top: -15%;
+}
+
+.enter {
+  color: white;
+  opacity: 1;
+  z-index: 1;
+  margin: 20px 0 -150px 10px;
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
 }
 
 #opening {
   width: auto;
   height: 1200px;
-  background-image: url("Untitled-1.gif");
   position: relative;
 }
 
@@ -18,7 +39,7 @@ form {
 .game {
   height: 100%;
   width: 100%;
-  background-image: url("http://wyeagricolaclub.org.uk/images/galleries/5/desktop-background-space-hd-background-wallpaper-48.jpg");
+  background-image: url("spaceBackground-min.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: -3;
@@ -125,7 +146,7 @@ form {
   background-image: url("http://i.imgur.com/vdkJjqB.gif");
   background-size: 100px 50px;
   margin: 50px 0 0 25px;
-  z-index: -1:
+  z-index: -1;
 }
 
 #h1 {
