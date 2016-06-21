@@ -1,9 +1,10 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
-    livereload = require('gulp-livereload'),
     prefix = require('gulp-autoprefixer'),
+    ghPages = require('gulp-gh-pages'),
     browserSync = require('browser-sync').create();
+
 'use strict';
 
 function errorLog(error) {
@@ -11,7 +12,7 @@ function errorLog(error) {
   this.emit('end');
 }
 
-// Static server
+// Static server - reloads after changes to html, css, or js
 gulp.task('serve', ['sass'], function() {
     browserSync.init({
         server: {
@@ -23,6 +24,13 @@ gulp.task('serve', ['sass'], function() {
     gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
+//Push directly to gh-pages
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
+//watch for changes in js and minifies files
 gulp.task('scripts', function() {
     gulp.src('js/*.js')
       .pipe(uglify())
@@ -30,6 +38,7 @@ gulp.task('scripts', function() {
       .pipe(gulp.dest('minjs'));
 })
 
+//checks for errors, automatically adds prefixers to css
 gulp.task('sass', function () {
     gulp.src('scss/**/*.scss')
       .pipe(sass.sync().on('error', sass.logError))

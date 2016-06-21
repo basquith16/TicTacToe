@@ -1,4 +1,28 @@
-html body {
-  background: black;
-  color: #fff;
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:400,100,500|Tangerine:400,700);
+
+//breakpoints
+$laptop: new-breakpoint(max-width 1000px 12);
+$tablet: new-breakpoint(max-width 800px 12);
+$mobile: new-breakpoint(max-width 600px 12);
+
+//fonts
+$f-header: 'Lora', serif;
+$f-body: 'Roboto', sans-serif;
+$f-fancy: 'Tangerine', cursive;
+
+//colors
+$c-primary: #fff;
+$c-secondary: #000;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $f-header;
+  color: $c-primary;
+  font-weight: 400;
+}
+
+body {
+  background: #000;
 }
