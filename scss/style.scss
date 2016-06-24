@@ -1,55 +1,126 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
-
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:400,100,500|Tangerine:400,700);
-
 //breakpoints
 $laptop: new-breakpoint(max-width 1000px 12);
 $tablet: new-breakpoint(max-width 800px 12);
 $mobile: new-breakpoint(max-width 600px 12);
-
 //fonts
 $f-header: 'Lora', serif;
 $f-body: 'Roboto', sans-serif;
 $f-fancy: 'Tangerine', cursive;
-
 //colors
 $c-primary: #fff;
 $c-secondary: #000;
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $f-header;
-  color: $c-primary;
-  font-weight: 400;
-  text-transform: uppercase;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $f-header;
+    color: $c-primary;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 h1 {
-  font-size: 3.18rem;
-  letter-spacing: .08em;
+    font-size: 2.18rem;
+    letter-spacing: 0.08em;
 }
-
 body {
-  background: #000;
-  text-align: center;
+    background: #000;
+    text-align: center;
 }
 #myCanvas {
-  opacity: .6;
-  width: 100%;
-  max-height: 730px;
+    opacity: 0.6;
+    width: 100%;
+    max-height: 730px;
+}
+table {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-left: 25%;
 }
 .parallax {
-position: fixed;
-top: 0;
-left: 0;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .heading {
-  background: transparent;
+    background: transparent;
+    position: relative;
+    z-index: 5;
+    margin-top: 400px;
+    margin-bottom: 300px;
+    height: 200px;
+}
+.frames {
+    height: 300px;
+    width: 300px;
+    margin: 250px auto 0;
+    // background: rgba(#660000, .3);
+    color: #000;
+    @include span-columns(12);
+    // clip-path: polygon(0% 0%, 0% 100%, 17% 100%, 17% 18%, 82% 18%, 81% 84%, 16% 84%, 17% 100%, 100% 100%, 100% 0%);
+    margin-bottom: 10px;
+    text-align: center;
+}
+h1 {
+    margin-top: 8px;
+}
+.frames2 {
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    // background: rgba(blue, .1);
+    color: #000;
+    @include span-columns(12);
+    // clip-path: polygon(0% 0%, 0% 100%, 7% 100%, 7% 18%, 93% 18%, 93% 84%, 6% 85%, 6% 100%, 100% 100%, 100% 0%);
+    text-align: center;
+}
+
+.css-typing {
+  text-transform: uppercase;
+  margin-top: 200px;
+  text-align: center;
+  @include span-columns(12)
+  color: #fff;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 3em;
   position: relative;
-  z-index: 5;
-  margin-top: 400px;
-  margin-bottom: 1000px;
-  height: 200px;
+  z-index: 10;
+
+}
+@keyframes type {
+  to {
+    width: 13em;
+  }
+}
+@-webkit-keyframes type {
+  to {
+    width: 13em;
+  }
+}
+p{
+  -webkit-animation: type 5s steps(30, end);
+   animation: type 5s steps(30, end);
+}
+p:nth-child(2){
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
+p:nth-child(3){
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
+}
+p:nth-child(4){
+  -webkit-animation-delay: 18s;
+  animation-delay: 18s;
 }
