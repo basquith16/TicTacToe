@@ -5,6 +5,49 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+/*===========================
+Keyframes for Color Changes
+============================*/
+@keyframes colorChange {
+  0% {
+    background: #000; }
+  100% {
+    background: #99ddff; } }
+
+@keyframes colorChange2 {
+  0% {
+    background: #99ddff; }
+  100% {
+    background: #000; } }
+
+@keyframes colorChange3 {
+  0% {
+    background: #000; }
+  100% {
+    background: transparent; } }
+
+/*===========================
+Keyframes for Live Type
+============================*/
+@keyframes type {
+  to {
+    width: 13em; } }
+
+/*===================================
+Keyframes for Fades and Translations
+====================================*/
+@keyframes fade {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes textGrow {
+  0% {
+    font-size: 0; }
+  100% {
+    font-size: 4em; } }
+
 h1,
 h2,
 h3,
@@ -21,22 +64,26 @@ h1 {
   letter-spacing: 0.08em; }
 
 body {
+  transition: 2s linear all;
   background: #000;
-  text-align: center; }
+  text-align: center;
+  animation: colorChange2 3s 1;
+  animation-fill-mode: forwards; }
+
+main {
+  background: #000;
+  animation: colorChange3 5s 1;
+  animation-fill-mode: forwards; }
+
+.backgroundChange {
+  animation: colorChange 3s 1;
+  animation-fill-mode: forwards;
+  transition: 2s linear all; }
 
 #myCanvas {
   opacity: 0.6;
   width: 100%;
-  max-height: 730px;
-  animation: fade 3s 1;
-  animation-delay: 23s;
-  animation-fill-mode: forwards; }
-
-@keyframes fade {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
+  max-height: 730px; }
 
 table {
   width: 100%;
@@ -64,7 +111,7 @@ table {
   height: 300px;
   width: 300px;
   margin: 250px auto 0;
-  color: #000;
+  color: #fff;
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -81,7 +128,7 @@ h1 {
   height: 300px;
   width: 300px;
   margin: 0 auto;
-  color: #000;
+  color: #fff;
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -103,14 +150,15 @@ h1 {
   white-space: nowrap;
   overflow: hidden;
   font-size: 3em;
-  position: relative;
-  z-index: 10; }
+  position: relative; }
   .css-typing:last-child {
     margin-right: 0; }
 
-@keyframes type {
-  to {
-    width: 13em; } }
+p {
+  position: relative;
+  display: block;
+  color: #fff;
+  margin-bottom: 1400px; }
 
 p {
   animation: type 5s steps(30, end); }
@@ -123,3 +171,12 @@ p:nth-child(3) {
 
 p:nth-child(4) {
   animation-delay: 18s; }
+
+#growingText {
+  font-size: 0;
+  opacity: 0; }
+
+.growingText {
+  opacity: 1;
+  animation: textGrow 5s 1;
+  animation-fill-mode: forwards; }

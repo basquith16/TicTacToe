@@ -11,7 +11,8 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-    <canvas id="myCanvas" class="parallax" width="1680" height="200"></canvas>
+  <main>
+    <!-- <canvas id="myCanvas" class="parallax" width="1680" height="200"></canvas> -->
     <!-- <section class="heading">
         <img src="http://vignette2.wikia.nocookie.net/thecreatures/images/4/48/Yoshi.png/revision/latest?cb=20150109223009" />
     </section> -->
@@ -19,11 +20,10 @@
       <tbody>
       <tr>
         <td class="frames">
-          <p class='css-typing'>Once Upon a Time . . . </p>
-          <p class='css-typing'>There Was a Man</p>
-          <p class='css-typing'>Trapped in a career</p>
-          <p class='css-typing'>Life was scary</p>
-
+          <p class="css-typing">Once Upon a Time . . . </p>
+          <p class="css-typing">There Was a Man</p>
+          <p class="css-typing">Trapped in a career</p>
+          <p class="css-typing">Life was scary</p>
         </td>
       </tr>
     </tbody>
@@ -31,26 +31,29 @@
     <table>
       <tbody>
       <tr>
-        <td class="frames2">
+        <td class="frames">
+          <div id="trigger1"></div>
+          <div id="backgroundChange">
+              <h1 class="css-typing">Then Something Happened!</h1>
+          </div>
         </td>
         <td class="frames2">
+          <div id="trigger2">
+            <h2 id="growingTitle">Watch me GROW!</h2>
+          </div>
         </td>
       </tr>
     </tbody>
     </table>
-
-
-
-
-
+</main>
 
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-    </script>
-    <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script src="js/main.js"></script>
 </body>
 

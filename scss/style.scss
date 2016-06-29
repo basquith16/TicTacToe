@@ -1,14 +1,18 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
+@import "keyframes";
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:400,100,500|Tangerine:400,700);
+
 //breakpoints
 $laptop: new-breakpoint(max-width 1000px 12);
 $tablet: new-breakpoint(max-width 800px 12);
 $mobile: new-breakpoint(max-width 600px 12);
+
 //fonts
 $f-header: 'Lora', serif;
 $f-body: 'Roboto', sans-serif;
 $f-fancy: 'Tangerine', cursive;
+
 //colors
 $c-primary: #fff;
 $c-secondary: #000;
@@ -29,24 +33,29 @@ h1 {
     letter-spacing: 0.08em;
 }
 body {
+    transition: 2s linear all;
     background: #000;
     text-align: center;
+    animation: colorChange2 3s 1;
+    animation-fill-mode: forwards;
+}
+main {
+  background: #000;
+  animation: colorChange3 5s 1;
+  animation-fill-mode: forwards;
+}
+.backgroundChange {
+  animation: colorChange 3s 1;
+  animation-fill-mode: forwards;
+  transition: 2s linear all;
 }
 #myCanvas {
     opacity: 0.6;
     width: 100%;
     max-height: 730px;
-    animation: fade 3s 1;
-    animation-delay: 23s;
-    animation-fill-mode: forwards;
-}
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+    // animation: fade 3s 1;
+    // animation-delay: 23s;
+    // animation-fill-mode: forwards;
 }
 table {
     width: 100%;
@@ -75,7 +84,7 @@ table {
     width: 300px;
     margin: 250px auto 0;
     // background: rgba(#660000, .3);
-    color: #000;
+    color: #fff;
     @include span-columns(12);
     // clip-path: polygon(0% 0%, 0% 100%, 17% 100%, 17% 18%, 82% 18%, 81% 84%, 16% 84%, 17% 100%, 100% 100%, 100% 0%);
     margin-bottom: 10px;
@@ -89,7 +98,7 @@ h1 {
     width: 300px;
     margin: 0 auto;
     // background: rgba(blue, .1);
-    color: #000;
+    color: #fff;
     @include span-columns(12);
     // clip-path: polygon(0% 0%, 0% 100%, 7% 100%, 7% 18%, 93% 18%, 93% 84%, 6% 85%, 6% 100%, 100% 100%, 100% 0%);
     text-align: center;
@@ -106,19 +115,14 @@ h1 {
   overflow: hidden;
   font-size: 3em;
   position: relative;
-  z-index: 10;
+}
+p {
+  position: relative;
+  display: block;
+  color: #fff;
+  margin-bottom: 1400px;
+}
 
-}
-@keyframes type {
-  to {
-    width: 13em;
-  }
-}
-@-webkit-keyframes type {
-  to {
-    width: 13em;
-  }
-}
 p{
   -webkit-animation: type 5s steps(30, end);
    animation: type 5s steps(30, end);
@@ -134,4 +138,13 @@ p:nth-child(3){
 p:nth-child(4){
   -webkit-animation-delay: 18s;
   animation-delay: 18s;
+}
+#growingText {
+    font-size: 0;
+    opacity: 0;
+}
+.growingText {
+  opacity: 1;
+  animation: textGrow 5s 1;
+  animation-fill-mode: forwards;
 }
