@@ -1,7 +1,9 @@
 /*===========================
 Keyframes for Color Changes
 ============================*/
-
+body {
+  background: yellow !important;
+}
 @keyframes colorChange {
   0% {
     background: #000;
