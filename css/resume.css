@@ -30,3 +30,14 @@
 
 .workExperience {
   text-align: center; }
+
+.resumePDF {
+  text-align: left; }
+  .resumePDF img {
+    margin-left: 7px; }
+  .resumePDF a {
+    text-align: center;
+    color: #000; }
+  .resumePDF h6 {
+    font-size: 13px;
+    text-align: left; }
