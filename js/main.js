@@ -85,7 +85,7 @@ jQuery(document).ready(function($){
 
 				if (current_square === 'c1' && ui.draggable.hasClass("draggableO") && (earth.controlled === false) && (oTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/0cBHUU3.png');
+					$(this).css('background-image', 'url(../img/0cBHUU3.png');
 					changeText("Earth has been saved by the Ovarias!");
 					earth.byWho = 'ovaria;'
 					earth.controlled = true;
@@ -94,7 +94,7 @@ jQuery(document).ready(function($){
 				} else if (current_square === 'c2' && ui.draggable.hasClass("draggableO") && (uranus.controlled === false) && (oTurn === true)) {
 					reset_text();
 					changeText("Uranus has been saved by the Ovarias!")
-					$(this).css('background-image', 'url(/img/xcqk7Km.png');
+					$(this).css('background-image', 'url(../img/xcqk7Km.png');
 					uranus.byWho = 'ovaria'
 					uranus.controlled = true;
 					oTurn = false;
@@ -103,7 +103,7 @@ jQuery(document).ready(function($){
 				} else if (current_square === 'c3' && ui.draggable.hasClass("draggableO") && (mars.controlled === false) && (oTurn === true)) {
 					reset_text();
 
-					$(this).css('background-image', 'url(/img/4iLcaae.png');
+					$(this).css('background-image', 'url(../img/4iLcaae.png');
 					changeText("Mars has been saved by the Ovarias!")
 					mars.byWho = 'ovaria'
 					mars.controlled = true;
@@ -111,7 +111,7 @@ jQuery(document).ready(function($){
 					xTurn = true;
 				} else if (current_square === 'c4' && ui.draggable.hasClass("draggableO") && (neptune.controlled === false) && (oTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/SS0IRXq.png');
+					$(this).css('background-image', 'url(../img/SS0IRXq.png');
 					changeText("Neptune has been saved by the Ovarias!");
 					neptune.byWho = ovaria;
 					neptune.controlled = true;
@@ -119,7 +119,7 @@ jQuery(document).ready(function($){
 					xTurn = true;
 				} else if (current_square === 'c5' && ui.draggable.hasClass("draggableO") && (theSun.controlled === false) && (oTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/pekTKHw.png');
+					$(this).css('background-image', 'url(../img/pekTKHw.png');
 					changeText("The sun has been saved by the Ovarias!");
 					theSun.byWho = 'ovaria';
 					theSun.controlled = true;
@@ -127,7 +127,7 @@ jQuery(document).ready(function($){
 					xTurn = true;
 				} else if (current_square === 'c6' && ui.draggable.hasClass("draggableO") && (venus.controlled === false) && (oTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/EWbippL.png');
+					$(this).css('background-image', 'url(../img/EWbippL.png');
 					changeText("Venus has been saved by the Ovarias!")
 					venus.byWho = 'ovaria'
 					venus.controlled = true;
@@ -135,7 +135,7 @@ jQuery(document).ready(function($){
 					xTurn = true;
 				} else if (current_square === 'c7' && ui.draggable.hasClass("draggableO") && (mercury.controlled === false) && (oTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/CPntIMv.png');
+					$(this).css('background-image', 'url(../img/CPntIMv.png');
 					changeText("Mercury has been saved by the Ovarias!");
 					mercury.byWho = 'ovaria';
 					mercury.controlled = true;
@@ -143,7 +143,7 @@ jQuery(document).ready(function($){
 					xTurn = true;
 				} else if (current_square === 'c8' && ui.draggable.hasClass("draggableO") && (saturn.controlled === false) && (oTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/cLeNrxm.png');
+					$(this).css('background-image', 'url(../img/cLeNrxm.png');
 					changeText("Saturn has been saved by the Ovarias!");
 					saturn.byWho = 'ovaria';
 					saturn.controlled = true;
@@ -151,7 +151,7 @@ jQuery(document).ready(function($){
 					xTurn = true;
 				} else if (current_square === 'c9' && ui.draggable.hasClass("draggableO") && (jupiter.controlled === false) && (oTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/Vi0m3On.png');
+					$(this).css('background-image', 'url(../img/Vi0m3On.png');
 					changeText("Jupiter has been saved by the Ovarias!")
 					jupiter.byWho = 'ovaria';
 					jupiter.controlled = true;
@@ -159,7 +159,7 @@ jQuery(document).ready(function($){
 					xTurn = true;
 				} else if (current_square === 'c1' && ui.draggable.hasClass("draggableX") && (earth.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif');
+					$(this).css('background-image', 'url(../img/toCSozd.gif');
 					changeText("Earth has been conquered by the Xyphonoids!")
 					earth.byWho = 'xyphonoid';
 					earth.controlled = true;
@@ -167,7 +167,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c2' && ui.draggable.hasClass("draggableX") && (uranus.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					$(this).css('background-image', 'url(../img/toCSozd.gif)');
 					changeText("Uranus has been conquered by the Xyphonoids!")
 					uranus.byWho = 'xyphonoid';
 					uranus.controlled = true;
@@ -175,7 +175,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c3' && ui.draggable.hasClass("draggableX") && (mars.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					$(this).css('background-image', 'url(../img/toCSozd.gif)');
 					changeText("Mars has been conquered by the Xyphonoids!");
 					mars.byWho = 'xyphonoid';
 					mars.controlled = true;
@@ -183,7 +183,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c4' && ui.draggable.hasClass("draggableX") && (neptune.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					$(this).css('background-image', 'url(../img/toCSozd.gif)');
 					changeText("Neptune has been conquered by the Xyphonoids!");
 					neptune.byWho = 'xyphonoid';
 					neptune.controlled = true;
@@ -191,7 +191,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c5' && ui.draggable.hasClass("draggableX") && (theSun.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/fPobuiJ.png)');
+					$(this).css('background-image', 'url(../img/fPobuiJ.png)');
 					changeText("The sun has been conquered by the Xyphonoids!")
 					theSun.byWho = 'xyphonoid';
 					theSun.controlled = true;
@@ -199,7 +199,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c6' && ui.draggable.hasClass("draggableX") && (venus.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					$(this).css('background-image', 'url(../img/toCSozd.gif)');
 					changeText("Venus has been conquered by the Xyphonoids!")
 					venus.byWho = 'xyphonoid';
 					venus.controlled = true;
@@ -207,7 +207,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c7' && ui.draggable.hasClass("draggableX") && (mercury.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					$(this).css('background-image', 'url(../img/toCSozd.gif)');
 					changeText("Mercury has been conquered by the Xyphonoids!")
 					mercury.byWho = 'xyphonoid';
 					mercury.controlled = true;
@@ -215,7 +215,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c8' && ui.draggable.hasClass("draggableX") && (saturn.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					$(this).css('background-image', 'url(../img/toCSozd.gif)');
 					changeText("Saturn has been conquered by the Xyphonoids!")
 					saturn.byWho = 'xyphonoid';
 					saturn.controlled = true;
@@ -223,7 +223,7 @@ jQuery(document).ready(function($){
 					oTurn = true;
 				} else if (current_square === 'c9' && ui.draggable.hasClass("draggableX") && (jupiter.controlled === false) && (xTurn === true)) {
 					reset_text();
-					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					$(this).css('background-image', 'url(../img/toCSozd.gif)');
 					changeText("Jupiter has been conquered by the Xyphonoids!")
 					jupiter.byWho = 'xyphonoid';
 					jupiter.controlled = true;
