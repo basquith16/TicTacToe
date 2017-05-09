@@ -1,41 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <link href="style.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js'></script>
-  <meta charset="utf-8">
-  <title>Tic Tac Toe</title>
-</head>
-<body>
-  <div class="content"></div>
-  <script>
-  var Router = Backbone.Router.extend({
-
-    routes: {
-      '': 'intro',
-      ':game': 'showGame'
-    },
-
-    intro: function() {
-      $.get('intro.html').then(function(page) {
-        $('body').html(page);
-      })
-    },
-
-    showGame: function() {
-      $.get('game.html').then(function(page) {
-        $('body').html(page);
-          });
-      }
-    });
-
-  $(function() {
-    const router = new Router();
-    Backbone.history.start();
-  });
-  </script>
-</body>
+  <head>
+      <title></title>
+      <link rel="stylesheet" href="css/style.css">
+      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+      <div class='game'>
+          <header>
+              <div class="draggableX">
+                  <div id='X'></div>
+                  <div class="rockets" id="rocket1"></div>
+                  <div class="rockets" id="rocket2"></div>
+                  <div class="rockets" id="rocket3"></div>
+                  <div class="rockets" id="rocket4"></div>
+              </div>
+              <div id="title-text-area">
+                  <h1>TIC TAC TOE</h1>
+                  <h2 id="action"><h2>
+          </div>
+          <div class="draggableO">
+            <div id="orocket"></div>
+            <div id="O"></div>
+          </div>
+        </header>
+        <div id="dialog"></div>
+        <main>
+          <section class="ba-rows row1">
+            <div class="ba-columns column1">
+              <div id="c3" class="droppable"></div>
+            </div>
+            <div class="ba-columns column2">
+              <div id="c2" class="droppable"></div>
+            </div>
+            <div class="ba-columns column3">
+              <div id="c1" class="droppable"></div>
+            </div>
+          </section>
+          <section class="ba-rows row2">
+            <div class="ba-columns column1">
+              <div id="c6" class="droppable"></div>
+            </div>
+            <div class="ba-columns column2">
+              <div id="c5" class="droppable"></div>
+            </div>
+            <div class="ba-columns column3">
+              <div id="c4" class="droppable"></div>
+            </div>
+          </section>
+          <section class="ba-rows row3">
+            <div class="ba-columns column1">
+              <div id="c9" class="droppable"></div>
+            </div>
+            <div class="ba-columns column2">
+              <div id="c8" class="droppable"></div>
+            </div>
+            <div class="ba-columns column3">
+              <div id="c7" class="droppable"></div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="js/jquery-2.1.1.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
 </html>
