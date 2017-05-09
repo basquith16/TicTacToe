@@ -30,7 +30,7 @@ html, body {
 .game {
   width: 100%;
   z-index: -3;
-  background-image: url("/img/spaceBackground-min.jpg");
+  background-image: url("../img/spaceBackground-min.jpg");
   background-size: cover; }
 
 #action {
@@ -68,7 +68,7 @@ html, body {
   z-index: 4; }
 
 #X {
-  background-image: url("/img/TOd0zZk.png");
+  background-image: url("../img/TOd0zZk.png");
   background-size: 90px 90px;
   height: 90px;
   width: 90px;
@@ -76,7 +76,7 @@ html, body {
   padding: 0; }
 
 #O {
-  background-image: url("/img/ZB6Nxl6.png");
+  background-image: url("../img/ZB6Nxl6.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 60px;
@@ -86,7 +86,7 @@ html, body {
   z-index: 1; }
 
 #rocket1, #rocket2, #rocket3, #rocket4 {
-  background-image: url("/img/LeUquib.gif");
+  background-image: url("../img/LeUquib.gif");
   opacity: .8;
   position: absolute;
   z-index: -1; }
@@ -104,7 +104,7 @@ html, body {
   margin: -50px 0 0 75px; }
 
 #orocket {
-  background-image: url("/img/vdkJjqB.gif");
+  background-image: url("../img/vdkJjqB.gif");
   background-size: contain;
   background-repeat: no-repeat;
   height: 60px;
@@ -159,7 +159,7 @@ main {
   margin: -101px 0 0  -125px; }
 
 .ba-columns {
-  background-image: url("/img/MQgjza4.png");
+  background-image: url("../img/MQgjza4.png");
   width: 200px;
   height: 200px;
   background-repeat: no-repeat;
@@ -191,38 +191,38 @@ main {
   background-size: 80px 80px; }
 
 #c1 {
-  background-image: url("/img/u3hC7PY.png");
+  background-image: url("../img/u3hC7PY.png");
   margin: 2px 0 0 60px; }
 
 #c3, #c4, #c5, #c6 {
   margin: 5px 0 0 65px; }
 
 #c2 {
-  background-image: url("/img/hzsPgPs.png");
+  background-image: url("../img/hzsPgPs.png");
   margin: 2px 0 0 65px; }
 
 #c3 {
-  background-image: url("/img/JXDYDbc.png"); }
+  background-image: url("../img/JXDYDbc.png"); }
 
 #c4 {
-  background-image: url("/img/EI0AIBW.png"); }
+  background-image: url("../img/EI0AIBW.png"); }
 
 #c5 {
-  background-image: url("/img/d2Pb3Of.png"); }
+  background-image: url("../img/d2Pb3Of.png"); }
 
 #c6 {
-  background-image: url("/img/4Qhmru5.png"); }
+  background-image: url("../img/4Qhmru5.png"); }
 
 #c7 {
-  background-image: url("/img/BIATFCZ.png");
+  background-image: url("../img/BIATFCZ.png");
   margin: 0 0 0 60px; }
 
 #c8 {
-  background-image: url("/img/Fx2cfD6.png");
+  background-image: url("../img/Fx2cfD6.png");
   margin: 0 0 0 60px; }
 
 #c9 {
-  background-image: url("/img/ohuUIMP.png");
+  background-image: url("../img/ohuUIMP.png");
   margin: 3px 0 0 60px; }
 
 .pilot_info {
