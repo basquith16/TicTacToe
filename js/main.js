@@ -1,100 +1,238 @@
 jQuery(document).ready(function($){
-	var gallery = $('.cd-gallery'),
-		foldingPanel = $('.cd-folding-panel'),
-		mainContent = $('.cd-main');
-	/* open folding content */
-	gallery.on('click', 'a', function(event){
-		event.preventDefault();
-		openItemInfo($(this).attr('href'));
-	});
 
-	/* close folding content */
-	foldingPanel.on('click', '.cd-close', function(event){
-		event.preventDefault();
-		toggleContent('', false);
-	});
-	gallery.on('click', function(event){
-		/* detect click on .cd-gallery::before when the .cd-folding-panel is open */
-		if($(event.target).is('.cd-gallery') && $('.fold-is-open').length > 0 ) toggleContent('', false);
+	//Global Variables
+	var xyphonoid = $('#X');
+	var ovaria = $('#O');
+	var draggableO = $('.draggableO');
+	var draggableX = $('.draggableX');
+	var droppable = $('.droppable');
+	var xTurn = true;
+	var oTurn = true;
+	var player1 = '';
+	var player2 = '';
+
+	//Created object Planet with two elements dictating whether the planet(square) has been played and if it is an X or O
+	function Planet(controlled, byWho) {
+		this.controlled = controlled;
+		this.byWho = byWho;
+	}
+	// Created the planets as new objects assigning that they are not occupied and have been played by no one.
+	var mars = new Planet(false, "");
+	var uranus = new Planet(false, "");
+	var earth = new Planet(false, "");
+	var neptune = new Planet(false, "");
+	var saturn = new Planet(false, "");
+	var theSun = new Planet(false, "");
+	var mercury = new Planet(false, "");
+	var venus = new Planet(false, "");
+	var jupiter = new Planet(false, "");
+
+	//A function determining who won the game. If three consecutive planets(squares are occupied by X or O, they win the game.
+	var win = function() {
+		if ((earth.byWho === 'xyphonoid') && (uranus.byWho === 'xyphonoid') && (mars.byWho === 'xyphonoid') ||
+			(earth.byWho === 'xyphonoid') && (neptune.byWho === 'xyphonoid') && (mercury.byWho === 'xyphonoid') ||
+			(neptune.byWho === 'xyphonoid') && (theSun.byWho === 'xyphonoid') && (venus.byWho === 'xyphonoid') ||
+			(mars.byWho === 'xyphonoid') && (venus.byWho === 'xyphonoid') && (jupiter.byWho === 'xyphonoid') ||
+			(uranus.byWho === 'xyphonoid') && (theSun.byWho === 'xyphonoid') && (saturn.byWho === 'xyphonoid') ||
+			(mars.byWho === 'xyphonoid') && (theSun.byWho === 'xyphonoid') && (mercury.byWho === 'xyphonoid') ||
+			(mercury.byWho === 'xyphonoid') && (saturn.byWho === 'xyphonoid') && (jupiter.byWho === 'xyphonoid') ||
+			(jupiter.byWho === 'xyphonoid') && (theSun.byWho === 'xyphonoid') && (earth.byWho === 'xyphonoid')) {
+
+			changeText("<br><p>The Xyphonoids have gained control of the galaxy! Prepare for impending DOOM!</p>")
+			window.location.reload();
+
+		} else if ((earth.byWho === 'ovaria') && (uranus.byWho === 'ovaria') && (mars.byWho === 'ovaria') ||
+			(earth.byWho === 'ovaria') && (neptune.byWho === 'ovaria') && (mercury.byWho === 'ovaria') ||
+			(neptune.byWho === 'ovaria') && (theSun.byWho === 'ovaria') && (venus.byWho === 'ovaria') ||
+			(mars.byWho === 'ovaria') && (venus.byWho === 'ovaria') && (jupiter.byWho === 'ovaria') ||
+			(uranus.byWho === 'ovaria') && (theSun.byWho === 'ovaria') && (saturn.byWho === 'ovaria') ||
+			(mars.byWho === 'ovaria') && (theSun.byWho === 'ovaria') && (mercury.byWho === 'ovaria') ||
+			(mercury.byWho === 'ovaria') && (saturn.byWho === 'ovaria') && (jupiter.byWho === 'ovaria') ||
+			(jupiter.byWho === 'ovaria') && (theSun.byWho === 'ovaria') && (earth.byWho === 'ovaria')) {
+
+			changeText("<br><p>The Ovarias have saved the galaxy from destruction! The Xyphonoids have retreated!</p>")
+			// window.location.reload();
+		}
+			else if(earth.controlled && uranus.controlled && mars.controlled && neptune.controlled && mercury.controlled && theSun.controlled && venus.controlled && jupiter.controlled && saturn.controlled == true){
+				changeText("<br><p>Both fleets are depleted and the fate of the galaxy is still up in the air! The battle is over but the war has just begun!</p>")
+				// window.location.reload();
+			}
+	};
+
+	function changeText(text) {
+		$('#action').append(text)
+	}
+
+	function reset_text() {
+		$('#action').empty()
+	}
+
+	function Pilots(name, fleet) {
+		this.name = name;
+		this.fleet = fleet;
+	}
+
+	$(function() {
+
+		$(".draggableX").draggable();
+		$(".draggableO").draggable();
+
+		$('.droppable').droppable({
+			drop: function(event, ui) {
+
+				var action = $("#action");
+				var current_square = $(this).attr("id");
+
+				if (current_square === 'c1' && ui.draggable.hasClass("draggableO") && (earth.controlled === false) && (oTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/0cBHUU3.png');
+					changeText("Earth has been saved by the Ovarias!");
+					earth.byWho = 'ovaria;'
+					earth.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c2' && ui.draggable.hasClass("draggableO") && (uranus.controlled === false) && (oTurn === true)) {
+					reset_text();
+					changeText("Uranus has been saved by the Ovarias!")
+					$(this).css('background-image', 'url(/img/xcqk7Km.png');
+					uranus.byWho = 'ovaria'
+					uranus.controlled = true;
+					oTurn = false;
+					xTurn = true;
+
+				} else if (current_square === 'c3' && ui.draggable.hasClass("draggableO") && (mars.controlled === false) && (oTurn === true)) {
+					reset_text();
+
+					$(this).css('background-image', 'url(/img/4iLcaae.png');
+					changeText("Mars has been saved by the Ovarias!")
+					mars.byWho = 'ovaria'
+					mars.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c4' && ui.draggable.hasClass("draggableO") && (neptune.controlled === false) && (oTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/SS0IRXq.png');
+					changeText("Neptune has been saved by the Ovarias!");
+					neptune.byWho = ovaria;
+					neptune.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c5' && ui.draggable.hasClass("draggableO") && (theSun.controlled === false) && (oTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/pekTKHw.png');
+					changeText("The sun has been saved by the Ovarias!");
+					theSun.byWho = 'ovaria';
+					theSun.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c6' && ui.draggable.hasClass("draggableO") && (venus.controlled === false) && (oTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/EWbippL.png');
+					changeText("Venus has been saved by the Ovarias!")
+					venus.byWho = 'ovaria'
+					venus.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c7' && ui.draggable.hasClass("draggableO") && (mercury.controlled === false) && (oTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/CPntIMv.png');
+					changeText("Mercury has been saved by the Ovarias!");
+					mercury.byWho = 'ovaria';
+					mercury.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c8' && ui.draggable.hasClass("draggableO") && (saturn.controlled === false) && (oTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/cLeNrxm.png');
+					changeText("Saturn has been saved by the Ovarias!");
+					saturn.byWho = 'ovaria';
+					saturn.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c9' && ui.draggable.hasClass("draggableO") && (jupiter.controlled === false) && (oTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/Vi0m3On.png');
+					changeText("Jupiter has been saved by the Ovarias!")
+					jupiter.byWho = 'ovaria';
+					jupiter.controlled = true;
+					oTurn = false;
+					xTurn = true;
+				} else if (current_square === 'c1' && ui.draggable.hasClass("draggableX") && (earth.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif');
+					changeText("Earth has been conquered by the Xyphonoids!")
+					earth.byWho = 'xyphonoid';
+					earth.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c2' && ui.draggable.hasClass("draggableX") && (uranus.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					changeText("Uranus has been conquered by the Xyphonoids!")
+					uranus.byWho = 'xyphonoid';
+					uranus.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c3' && ui.draggable.hasClass("draggableX") && (mars.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					changeText("Mars has been conquered by the Xyphonoids!");
+					mars.byWho = 'xyphonoid';
+					mars.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c4' && ui.draggable.hasClass("draggableX") && (neptune.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					changeText("Neptune has been conquered by the Xyphonoids!");
+					neptune.byWho = 'xyphonoid';
+					neptune.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c5' && ui.draggable.hasClass("draggableX") && (theSun.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/fPobuiJ.png)');
+					changeText("The sun has been conquered by the Xyphonoids!")
+					theSun.byWho = 'xyphonoid';
+					theSun.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c6' && ui.draggable.hasClass("draggableX") && (venus.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					changeText("Venus has been conquered by the Xyphonoids!")
+					venus.byWho = 'xyphonoid';
+					venus.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c7' && ui.draggable.hasClass("draggableX") && (mercury.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					changeText("Mercury has been conquered by the Xyphonoids!")
+					mercury.byWho = 'xyphonoid';
+					mercury.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c8' && ui.draggable.hasClass("draggableX") && (saturn.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					changeText("Saturn has been conquered by the Xyphonoids!")
+					saturn.byWho = 'xyphonoid';
+					saturn.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				} else if (current_square === 'c9' && ui.draggable.hasClass("draggableX") && (jupiter.controlled === false) && (xTurn === true)) {
+					reset_text();
+					$(this).css('background-image', 'url(/img/toCSozd.gif)');
+					changeText("Jupiter has been conquered by the Xyphonoids!")
+					jupiter.byWho = 'xyphonoid';
+					jupiter.controlled = true;
+					xTurn = false;
+					oTurn = true;
+				}
+				win();
+			}
+		})
 	})
 
-	function openItemInfo(url) {
-		var mq = viewportSize();
-		if( gallery.offset().top > $(window).scrollTop() && mq != 'mobile') {
-			/* if content is visible above the .cd-gallery - scroll before opening the folding panel */
-			$('body,html').animate({
-				'scrollTop': gallery.offset().top
-			}, 100, function(){
-	           	toggleContent(url, true);
-	        });
-	    } else if( gallery.offset().top + gallery.height() < $(window).scrollTop() + $(window).height()  && mq != 'mobile' ) {
-			/* if content is visible below the .cd-gallery - scroll before opening the folding panel */
-			$('body,html').animate({
-				'scrollTop': gallery.offset().top + gallery.height() - $(window).height()
-			}, 100, function(){
-	           	toggleContent(url, true);
-	        });
-		} else {
-			toggleContent(url, true);
-		}
-	}
-
-	function toggleContent(url, bool) {
-		if( bool ) {
-			/* load and show new content */
-			var foldingContent = foldingPanel.find('.cd-fold-content');
-			foldingContent.load(url+' .cd-fold-content > *', function(event){
-				setTimeout(function(){
-					$('body').addClass('overflow-hidden');
-					foldingPanel.addClass('is-open');
-					mainContent.addClass('fold-is-open');
-				}, 100);
-
-			});
-		} else {
-			/* close the folding panel */
-			var mq = viewportSize();
-			foldingPanel.removeClass('is-open');
-			mainContent.removeClass('fold-is-open');
-
-			(mq == 'mobile' || $('.no-csstransitions').length > 0 )
-				/* according to the mq, immediately remove the .overflow-hidden or wait for the end of the animation */
-				? $('body').removeClass('overflow-hidden')
-
-				: mainContent.find('.cd-item').eq(0).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-					$('body').removeClass('overflow-hidden');
-					mainContent.find('.cd-item').eq(0).off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
-				});
-		}
-
-	}
-
-	function viewportSize() {
-		/* retrieve the content value of .cd-main::before to check the actua mq */
-		return window.getComputedStyle(document.querySelector('.cd-main'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, "");
-	}
 });
-
-//init scrollMagic
-// var controller = new ScrollMagic.Controller();
-//
-// var scene1 = new ScrollMagic.Scene({
-//   triggerElement: '#trigger1'
-// })
-// .setClassToggle("body", 'backgroundChange')
-// .addTo(controller);
-
-
-// var scene2 = new ScrollMagic.Scene({
-//   triggerElement: '#trigger2'
-// })
-// .setClassToggle("#growingTitle", 'growingText')
-// .addTo(controller);
-
-// var backgroundChange = new TweenMax.to('body', 3, {
-//   backgroundColor: 'yellow'
-// });
-//
-// .setTween(backgroundChange)
-// .addIndicators()
-// .addTo(controller);

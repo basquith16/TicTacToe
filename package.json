@@ -1,7 +1,7 @@
 {
-  "name": "portfolio_2016",
+  "name": "tictactoeupdate",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"All of the things\"",
   "main": "gulpfile.js",
   "dependencies": {
     "bourbon-neat": "^1.7.4",
@@ -20,5 +20,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Brian M Asquith",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "none"
+  }
 }

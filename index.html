@@ -1,94 +1,69 @@
 <!doctype html>
-<html class="no-js" lang="">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="scss/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="scss/3dMenu.css"> <!-- Resource style -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-<body>
-  <div style="width: 100%; height: 450px;">
-    <div id="video-wrap">
-        <video id="my-video" preload="metadata" autoplay loop>
-            <source src="img/Pc-Typing.webm" type="video/webm">
-              <source src="img/Pc-Typing.mp4" type="video/mp4">
-        </video>
-        <div class="content-overlay">
-          <h1 id="myTitle">Welcome to my site!<span id="cursor">_</span></h1>
-        </div>
-    </div>
-</div>
-<main class="cd-main">
-  <ul class="cd-gallery">
-    <li class="cd-item">
-      <a href="item-1.html">
-        <div>
-          <h2>My Resume</h2>
-          <p>Cool Stuff</p>
-          <b>Check it Out</b>
-        </div>
-      </a>
-    </li>
-
-    <li class="cd-item">
-      <a href="item-2.html" style="position: relative; z-index: 200;">
-        <div>
-          <h2>Contact Me</h2>
-          <p>Call, Tweet, Email, Fire Signals</p>
-          <b>Good Decision</b>
-        </div>
-      </a>
-    </li>
-
-    <li class="cd-item">
-      <a class="dark-text" href="item-3.html">
-        <div>
-          <h2>Portfolio</h2>
-          <p>A Few Projects in my Spare Time</p>
-          <b>View Me</b>
-        </div>
-      </a>
-    </li>
-
-    <li class="cd-item">
-      <a href="item-4.html">
-        <div>
-          <h2>Who I am</h2>
-          <p>I'm an okay dude</p>
-          <b>Enter My Mind</b>
-        </div>
-      </a>
-    </li>
-  </ul> <!-- .cd-gallery -->
-</main> <!-- .cd-main -->
-<div class="cd-folding-panel">
-
-  <div class="fold-left"></div> <!-- this is the left fold -->
-
-  <div class="fold-right"></div> <!-- this is the right fold -->
-
-  <div class="cd-fold-content">
-    <!-- content will be loaded using javascript -->
-  </div>
-
-  <a class="cd-close" href="#0"></a>
-</div> <!-- .cd-folding-panel -->
-    </div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/jquery-2.1.1.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-    <script type="text/javascript" src="js/backgroundVideo.js"></script>
-    <script src="js/main.js"></script>
-</body>
-
+<html>
+  <head>
+      <title></title>
+      <link rel="stylesheet" href="css/style.css">
+      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+      <div class='game'>
+          <header>
+              <div class="draggableX">
+                  <div id='X'></div>
+                  <div class="rockets" id="rocket1"></div>
+                  <div class="rockets" id="rocket2"></div>
+                  <div class="rockets" id="rocket3"></div>
+                  <div class="rockets" id="rocket4"></div>
+              </div>
+              <div id="title-text-area">
+                  <h1>TIC TAC TOE</h1>
+                  <h2 id="action"><h2>
+          </div>
+          <div class="draggableO">
+            <div id="orocket"></div>
+            <div id="O"></div>
+          </div>
+        </header>
+        <div id="dialog"></div>
+        <main>
+          <section class="ba-rows row1">
+            <div class="ba-columns column1">
+              <div id="c3" class="droppable"></div>
+            </div>
+            <div class="ba-columns column2">
+              <div id="c2" class="droppable"></div>
+            </div>
+            <div class="ba-columns column3">
+              <div id="c1" class="droppable"></div>
+            </div>
+          </section>
+          <section class="ba-rows row2">
+            <div class="ba-columns column1">
+              <div id="c6" class="droppable"></div>
+            </div>
+            <div class="ba-columns column2">
+              <div id="c5" class="droppable"></div>
+            </div>
+            <div class="ba-columns column3">
+              <div id="c4" class="droppable"></div>
+            </div>
+          </section>
+          <section class="ba-rows row3">
+            <div class="ba-columns column1">
+              <div id="c9" class="droppable"></div>
+            </div>
+            <div class="ba-columns column2">
+              <div id="c8" class="droppable"></div>
+            </div>
+            <div class="ba-columns column3">
+              <div id="c7" class="droppable"></div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="js/jquery-2.1.1.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
 </html>
