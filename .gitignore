@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+=======
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+test/bower_components
+>>>>>>> 900d1e5f2a1f31fb6bf6b64322b05e9b038a6759

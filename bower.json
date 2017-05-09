@@ -1,0 +1,17 @@
+{
+  "name": "tictactoe",
+  "version": "0.0.0",
+  "homepage": "https://github.com/basquith16/TicTacToe",
+  "authors": [
+    "Brian M Asquith <basquithcpt@gmail.com>"
+  ],
+  "description": "project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
